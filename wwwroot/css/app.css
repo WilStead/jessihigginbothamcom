@@ -629,10 +629,10 @@ footer {
     }
 
     &:nth-of-type(4n-1) {
-        background-color: #939786;
+        background-color: #eb1572;
 
         &:hover {
-            background-color: #7a7f6c;
+            background-color: #bc105b;
         }
     }
 }
@@ -1144,10 +1144,26 @@ dialog.full .close-dialog {
             position: relative;
         }
 
+        .target {
+            display: flex;
+            position: relative;
+            pointer-events: all;
+            z-index: 1;
+        }
+
         svg {
             height: 5rem;
             position: relative;
             width: 5rem;
+
+            .active & {
+                fill: #fbca3e;
+                stroke: #5726bfa8;
+            }
+
+            .pink .active & {
+                stroke: #eb157295;
+            }
         }
     }
 }

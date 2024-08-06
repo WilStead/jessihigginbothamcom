@@ -108,3 +108,11 @@ function starWordHandler(e) {
 document.querySelectorAll('.star-button').forEach(x => {
     x.addEventListener('click', starWordHandler);
 });
+
+document.querySelectorAll('.target').forEach(x => {
+    x.addEventListener('click', e => {
+        if (x.contains(e.target)) {
+            x.classList.add('active');
+        }
+    });
+});
