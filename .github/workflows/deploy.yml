@@ -1,0 +1,21 @@
+name: Deploy the site
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # add .nojekyll file so GitHub pages will not treat this as a Jekyll project
+      - name: Add .nojekyll file
+        run: touch .nojekyll
+        working-directory: ./wwwroot
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.6.3
+        with:
+          branch: gh-pages
+          folder: wwwroot
